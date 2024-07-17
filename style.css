@@ -159,9 +159,14 @@ section {
 }
 
 /* skills section */
+
 .skills-section {
   display: flex;
   background-color: var(--background--skills);
+}
+
+.skills-section .scrollAnimated {
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .skills-section--upper {
@@ -189,6 +194,10 @@ section {
   height: 100vh;
   width: 50vw;
   clip-path: circle(40vw at 100% 0%);
+}
+
+.skills__background--outer.hidden {
+  clip-path: circle(0vw at 100% 0%);
 }
 
 .skills__background--base {
@@ -245,15 +254,23 @@ section {
   position: absolute;
   background-color: var(--background);
   height: 100%;
-  width: 100%;
   clip-path: polygon(100% 0, 100% 68%, 0 100%, 0 34%);
 }
+
 .skills-content__background--extra {
   position: absolute;
   top: 20vh;
   background-color: white;
   height: 10%;
   width: 100%;
+}
+
+.skills-content__background--extra.hidden {
+  width: 0%;
+}
+
+.skills-content.hidden {
+  transform: translateX(-50vw);
 }
 
 .skills-content {
@@ -281,6 +298,10 @@ section {
     0 30%,
     2% 29%
   );
+}
+
+.skills-content--inner.hidden {
+  width: 2vw;
 }
 
 .skills-content--inner {
@@ -350,6 +371,10 @@ section {
   background-color: black;
   /* clip-path: polygon(0 0, 86% 0, 81% 21%, 0 100%); */
   clip-path: polygon(0 53%, 53% 0%, 92% 0%, 0 100%);
+}
+
+.skills-marquee--outer.hidden {
+  height: 0vh;
 }
 
 .skills-marquee {
