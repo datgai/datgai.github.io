@@ -36,6 +36,7 @@ a {
 }
 
 section {
+  position: relative;
   width: 100vw;
   height: 100dvh;
   display: flex;
@@ -442,14 +443,201 @@ section {
 /* About section */
 .about-me-section {
   background-color: var(--background--about-me);
+  background: radial-gradient(var(--background--about-me), pink);
+}
+
+.about-me--content {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.about-me--Eunice {
+  aspect-ratio: 1;
+  border-radius: 100%;
+  object-fit: cover;
 }
 
 /* Project section */
 .projects-section {
   background-color: var(--background--projects);
+  background: linear-gradient(white, #3ec9ff);
 }
 
-/* Contact section */
+.projects--content {
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px 50px;
+  perspective: 1000px;
+}
+
+.projects--card {
+  background-color: var(--background);
+  width: 40vw;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: row;
+  padding: 24px;
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.projects--card:nth-child(odd):hover {
+  transform: rotateY(10deg);
+}
+
+.projects--card:nth-child(even):hover {
+  transform: rotateY(-10deg);
+}
+
+.projects--card-img {
+  width: 250px;
+  height: 200px;
+  transform: translateZ(10000px);
+}
+
+#projects--card-Pengyou {
+  border-radius: 32px;
+  background: #fbc02d url(static/img/projects/PengYou-logo.png) center / 200px
+    200px no-repeat;
+}
+
+.projects--card:hover #projects--card-Pengyou {
+  background: #fbc02d url(static/img/projects/PengYou-preview.png) 0px 0px /
+    250px 350px no-repeat;
+}
+
+#projects--card-BudgetBuddy {
+  border-radius: 32px;
+  background: #20009e url(static/img/projects/BudgetBuddy-logo.png) center /
+    200px 50px no-repeat;
+}
+
+.projects--card:hover #projects--card-BudgetBuddy {
+  background: #20009e url(static/img/projects/BudgetBuddy-preview.png) center /
+    250px 200px no-repeat;
+}
+
+#projects--card-AccessAbility {
+  border-radius: 32px;
+  background: #267fff url(static/img/projects/AccessAbility-logo.png) center /
+    200px 110px no-repeat;
+}
+
+.projects--card:hover #projects--card-AccessAbility {
+  background: #267fff url(static/img/projects/AccessAbility-preview.png) -35px 0px /
+    350px 200px no-repeat;
+}
+
+.projects--pengyou {
+  background: url(static/img/sprites/penguin-golden-spoon.png);
+  --_size: 500px;
+  --_x-pos: calc(var(--_size) - 100px);
+  position: absolute;
+  bottom: 0;
+  width: calc(var(--_size) - 300px);
+  height: calc(var(--_size) - 300px);
+  background-size: calc(var(--_size) * 2.2) !important;
+  --_x-pos: calc(var(--_size) - 100px);
+  background-size: calc(var(--_size) * 2.2) !important;
+  /* animation: Animation__Pengyou--love 1s infinite; */
+  animation: Animation__Pengyou--walkFrames 1s infinite,
+    Animation__Pengyou--walk 12s infinite;
+}
+
+@keyframes Animation__Pengyou--love {
+  0% {
+    background-position: calc(var(--_size) - var(--_x-pos) * -1) 0px;
+  }
+  49% {
+    background-position: calc(var(--_size) - var(--_x-pos) * -1) 0px;
+  }
+  50% {
+    background-position: 0px 230px;
+  }
+  100% {
+    background-position: 0px 230px;
+  }
+}
+
+@keyframes Animation__Pengyou--walkFrames {
+  0% {
+    background-position: calc(var(--_size) - 400px * -1) 225px;
+  }
+  49% {
+    background-position: calc(var(--_size) - 400px * -1) 225px;
+  }
+  50% {
+    background-position: 0px 225px;
+  }
+  100% {
+    background-position: 0px 225px;
+  }
+}
+
+@keyframes Animation__Pengyou--walk {
+  0% {
+    transform: scaleX(1);
+    left: 0%;
+  }
+  10% {
+    transform: scaleX(1);
+    left: 40%;
+  }
+  20% {
+    transform: scaleX(1);
+    left: 60%;
+  }
+  21% {
+    transform: scaleX(-1);
+    left: 60%;
+  }
+  30% {
+    transform: scaleX(-1);
+    left: 40%;
+  }
+  40% {
+    transform: scaleX(-1);
+    left: 0%;
+  }
+  50% {
+    transform: scaleX(-1);
+    left: 0%;
+  }
+  60% {
+    transform: scaleX(-1);
+    left: -20%;
+  }
+  61% {
+    transform: scaleX(1);
+    left: -20%;
+  }
+  70% {
+    transform: scaleX(1);
+    left: -15%;
+  }
+  80% {
+    transform: scaleX(1);
+    left: 15%;
+  }
+  81% {
+    transform: scaleX(-1);
+    left: 15%;
+  }
+  90% {
+    transform: scaleX(-1);
+    left: 10%;
+  }
+  99% {
+    transform: scaleX(-1);
+    left: 0%;
+  }
+  100% {
+    transform: scaleX(1);
+    left: 0%;
+  }
+}
+
 .contact-section {
   background-color: var(--background--contact);
 }
